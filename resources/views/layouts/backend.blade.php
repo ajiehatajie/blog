@@ -92,13 +92,13 @@
         <hr/>
 
         <div class="container">
-            &copy; {{ date('Y') }}. Created by <a href="http://www.appzcoder.com">AppzCoder</a>
+            &copy; {{ date('Y') }}. Created by <a href="https://hatajie.com">ajie hatajie</a>
             <br/>
         </div>
 
         <!-- Scripts -->
         <script src="/js/app.js"></script>
-
+        @yield('footer')
         <script type="text/javascript">
             $(function () {
                 // Navigation active
