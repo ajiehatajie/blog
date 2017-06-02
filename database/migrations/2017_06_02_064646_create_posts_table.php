@@ -12,6 +12,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('posts', function(Blueprint $table) {
             $table->increments('id');
             $table->string('title');
@@ -26,6 +27,24 @@ class CreatePostsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
+
+        Schema::create('taggings', function(Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
+            $table->string('slug');
+            $table->string('desc');
+            $table->timestamps();
+        });
+
+        Schema::create('post_tags', function(Blueprint $table) {
+           $table->increments('id');
+           $table->integer('post_id')->unsigned();
+           $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+           $table->integer('tagging_id')->unsigned();
+           $table->foreign('tagging_id')->references('id')->on('taggings')->onDelete('cascade');
+           $table->timestamps();
+       });
+
     }
 
     /**
@@ -36,5 +55,8 @@ class CreatePostsTable extends Migration
     public function down()
     {
         Schema::drop('posts');
+        Schema::drop('taggings');
+        Schema::drop('post_tags');
+
     }
 }

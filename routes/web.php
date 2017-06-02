@@ -57,3 +57,5 @@ function()
   /*
     end admin route
   */
+
+Route::resource('admin/tagging', 'Admin\\TaggingController');

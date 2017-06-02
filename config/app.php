@@ -175,7 +175,6 @@ return [
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
-        Cviebrock\EloquentTaggable\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,

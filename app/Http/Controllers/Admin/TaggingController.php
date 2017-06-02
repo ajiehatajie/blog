@@ -5,12 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Post;
-use App\Tagging as Tag;
+use App\Tagging;
 use Illuminate\Http\Request;
 use Session;
 
-class PostsController extends Controller
+class TaggingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,20 +22,16 @@ class PostsController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $posts = Post::where('title', 'LIKE', "%$keyword%")
+            $tagging = Tagging::where('title', 'LIKE', "%$keyword%")
 				->orWhere('slug', 'LIKE', "%$keyword%")
-				->orWhere('description', 'LIKE', "%$keyword%")
-				->orWhere('content', 'LIKE', "%$keyword%")
-				->orWhere('published_at', 'LIKE', "%$keyword%")
-				->orWhere('publish', 'LIKE', "%$keyword%")
-				->orWhere('thumbnails', 'LIKE', "%$keyword%")
-				->orWhere('views', 'LIKE', "%$keyword%")
-        ->paginate($perPage);
+				->orWhere('desc', 'LIKE', "%$keyword%")
+				
+                ->paginate($perPage);
         } else {
-            $posts = Post::paginate($perPage);
+            $tagging = Tagging::paginate($perPage);
         }
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.tagging.index', compact('tagging'));
     }
 
     /**
@@ -46,8 +41,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $tag=Tag::pluck('title','id');
-        return view('admin.posts.create',compact('tag'));
+        return view('admin.tagging.create');
     }
 
     /**
@@ -60,22 +54,16 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-  			'title' => 'required',
-  			'description' => 'required',
-  			'content' => 'required',
-  			'published_at' => 'required',
-  			'publish' => 'required'
-  		]);
+			'title' => 'required',
+			'desc' => 'required'
+		]);
         $requestData = $request->all();
 
-        $post = New Post($requestData);
-        $post->save();
-        //Post::create($requestData);
-        $post->CreateInputTag()->attach($request->input('tag'));
+        Tagging::create($requestData);
 
-        Session::flash('flash_message', 'Post added!');
+        Session::flash('flash_message', 'Tagging added!');
 
-        return redirect('admin/posts');
+        return redirect('admin/tagging');
     }
 
     /**
@@ -87,10 +75,9 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        $post->addclick();
+        $tagging = Tagging::findOrFail($id);
 
-        return view('admin.posts.show', compact('post'));
+        return view('admin.tagging.show', compact('tagging'));
     }
 
     /**
@@ -102,9 +89,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        $tag=Tag::pluck('title','id');
-        return view('admin.posts.edit', compact('post','tag'));
+        $tagging = Tagging::findOrFail($id);
+
+        return view('admin.tagging.edit', compact('tagging'));
     }
 
     /**
@@ -119,19 +106,16 @@ class PostsController extends Controller
     {
         $this->validate($request, [
 			'title' => 'required',
-			'description' => 'required',
-			'content' => 'required',
-			'published_at' => 'required',
-			'publish' => 'required'
+			'desc' => 'required'
 		]);
         $requestData = $request->all();
 
-        $post = Post::findOrFail($id);
-        $post->update($requestData);
-        $post->CreateInputTag()->sync($request->input('tag'));
-        Session::flash('flash_message', 'Post updated!');
+        $tagging = Tagging::findOrFail($id);
+        $tagging->update($requestData);
 
-        return redirect('admin/posts');
+        Session::flash('flash_message', 'Tagging updated!');
+
+        return redirect('admin/tagging');
     }
 
     /**
@@ -143,10 +127,10 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        Post::destroy($id);
+        Tagging::destroy($id);
 
-        Session::flash('flash_message', 'Post deleted!');
+        Session::flash('flash_message', 'Tagging deleted!');
 
-        return redirect('admin/posts');
+        return redirect('admin/tagging');
     }
 }

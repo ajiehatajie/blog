@@ -7,9 +7,9 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create New Post</div>
+                    <div class="panel-heading">Create New Tagging</div>
                     <div class="panel-body">
-                        <a href="{{ url('/admin/posts') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/tagging') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -21,10 +21,9 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($post= new \App\Post,['url' => '/admin/posts', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/admin/tagging', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-
-                        @include ('admin.posts.form')
+                        @include ('admin.tagging.form')
 
                         {!! Form::close() !!}
 

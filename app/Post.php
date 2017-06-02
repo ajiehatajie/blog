@@ -5,12 +5,12 @@ namespace App;
 use DB;
 use Carbon\Carbon;
 use willvincent\Rateable\Rateable;
-use Cviebrock\EloquentTaggable\Taggable;
+
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 class Post extends Model
 {
-    use Rateable, Taggable, Sluggable;
+    use Rateable, Sluggable;
 
     /**
      * The database table used by the model.
@@ -54,13 +54,13 @@ class Post extends Model
            $model->user_id = $user->id;
            $model->views   = 0;
        });
-       /*
+
        static::updating(function($model)
       {
-          $user = Auth::user();
-          $model->updated_by = $user->id;
+          $user = \Auth::user();
+          $model->user_id = $user->id;
       });
-      */
+
     }
     /*
      untuk set value users_id
@@ -105,6 +105,19 @@ class Post extends Model
    }
 
 
+    /*
+         relasi dengan table post tags untuk proses input data baru
+    */
+
+    public function CreateInputTag()
+    {
+         return $this->belongsToMany('App\Tagging','post_tags','post_id','tagging_id')->withTimestamps();
+    }
+
+    public function getTagAttribute()//untuk set select pada fungsi edit
+    {
+      return $this->CreateInputTag->pluck('id')->all();
+    }
 
 
 

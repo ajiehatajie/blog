@@ -7,19 +7,20 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Post {{ $post->id }}</div>
+                    <div class="panel-heading">Tagging {{ $tagging->id }}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/admin/posts') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/admin/posts/' . $post->id . '/edit') }}" title="Edit Post"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+
+                        <a href="{{ url('/admin/tagging') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/tagging/' . $tagging->id . '/edit') }}" title="Edit Tagging"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['admin/posts', $post->id],
+                            'url' => ['admin/tagging', $tagging->id],
                             'style' => 'display:inline'
                         ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
                                     'type' => 'submit',
                                     'class' => 'btn btn-danger btn-xs',
-                                    'title' => 'Delete Post',
+                                    'title' => 'Delete Tagging',
                                     'onclick'=>'return confirm("Confirm delete?")'
                             ))!!}
                         {!! Form::close() !!}
@@ -30,15 +31,11 @@
                             <table class="table table-borderless">
                                 <tbody>
                                     <tr>
-                                        <th>ID</th><td>{{ $post->id }}</td>
+                                        <th>ID</th><td>{{ $tagging->id }}</td>
                                     </tr>
-                                    <tr><th> Title </th><td> {{ $post->title }} </td></tr><tr><th> Slug </th><td> {{ $post->slug }} </td></tr><tr><th> Description </th><td> {{ $post->description }} </td></tr>
+                                    <tr><th> Title </th><td> {{ $tagging->title }} </td></tr><tr><th> Slug </th><td> {{ $tagging->slug }} </td></tr><tr><th> Desc </th><td> {{ $tagging->desc }} </td></tr>
                                 </tbody>
                             </table>
-
-                          
-
-
                         </div>
 
                     </div>
