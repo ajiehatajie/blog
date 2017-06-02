@@ -177,6 +177,7 @@ return [
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Cviebrock\EloquentTaggable\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
         /*
          * Application Service Providers...
          */
