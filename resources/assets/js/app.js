@@ -1,4 +1,22 @@
+window.$ = window.jQuery = require('jquery')
+require('selectize');
+var bootstrap = require('bootstrap-sass');
 
+$( document ).ready(function() {
+    $('#tags').selectize({
+        delimiter: ',',
+        persist: false,
+        valueField: 'tag',
+        labelField: 'tag',
+        searchField: 'tag',
+        options: tags,
+        create: function(input) {
+            return {
+                tag: input
+            }
+        }
+    });
+});
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when

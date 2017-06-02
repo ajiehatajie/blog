@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef50827019fb43c5a4394dd4e34cc0d4",
+    "content-hash": "97e426b850be763da572238e3ea9829b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -570,6 +570,120 @@
             "time": "2017-03-29T16:04:15+00:00"
         },
         {
+            "name": "faustbrian/laravel-commentable",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/faustbrian/Laravel-Commentable.git",
+                "reference": "fc30fed31f9621a0139a52acd4e9180be4564a7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/faustbrian/Laravel-Commentable/zipball/fc30fed31f9621a0139a52acd4e9180be4564a7e",
+                "reference": "fc30fed31f9621a0139a52acd4e9180be4564a7e",
+                "shasum": ""
+            },
+            "require": {
+                "faustbrian/laravel-service-provider": "^1.0",
+                "illuminate/database": "5.3.* || 5.4.*",
+                "kalnoy/nestedset": "^4.1",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.2",
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BrianFaust\\Commentable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.de",
+                    "homepage": "https://brianfaust.de"
+                }
+            ],
+            "description": "Commentable Polymorphic Eloquent Models for for Laravel 5",
+            "keywords": [
+                "Brian Faust",
+                "Laravel Commentable",
+                "faustbrian",
+                "framework",
+                "laravel",
+                "laravel-commentable"
+            ],
+            "time": "2017-04-24T15:00:00+00:00"
+        },
+        {
+            "name": "faustbrian/laravel-service-provider",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/faustbrian/Laravel-Service-Provider.git",
+                "reference": "00f35b6639081a9a7acd3564529d6715dc6e9b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/faustbrian/Laravel-Service-Provider/zipball/00f35b6639081a9a7acd3564529d6715dc6e9b32",
+                "reference": "00f35b6639081a9a7acd3564529d6715dc6e9b32",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.3.* || 5.4.*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^3.2",
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BrianFaust\\ServiceProvider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.de",
+                    "homepage": "https://brianfaust.de"
+                }
+            ],
+            "description": "DRY Service Provider for Laravel 5 Packages",
+            "keywords": [
+                "Brian Faust",
+                "Laravel Service Provider",
+                "faustbrian",
+                "framework",
+                "laravel",
+                "laravel-service-provider"
+            ],
+            "time": "2017-01-20T12:24:12+00:00"
+        },
+        {
             "name": "graham-campbell/manager",
             "version": "v2.5.0",
             "source": {
@@ -954,6 +1068,60 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "kalnoy/nestedset",
+            "version": "v4.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lazychaser/laravel-nestedset.git",
+                "reference": "774a648f0d42aa6d9c189b561d52b5f7ff2cc441"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lazychaser/laravel-nestedset/zipball/774a648f0d42aa6d9c189b561d52b5f7ff2cc441",
+                "reference": "774a648f0d42aa6d9c189b561d52b5f7ff2cc441",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.2.* | 5.3.* | 5.4.*",
+                "illuminate/events": "5.2.* | 5.3.* | 5.4.*",
+                "illuminate/support": "5.2.* | 5.3.* | 5.4.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v4.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kalnoy\\Nestedset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kalnoy",
+                    "email": "lazychaser@gmail.com"
+                }
+            ],
+            "description": "Nested Set Model for Laravel 4-5",
+            "keywords": [
+                "database",
+                "hierarchy",
+                "laravel",
+                "nested sets",
+                "nsm"
+            ],
+            "time": "2017-05-12T06:21:25+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3046,6 +3214,58 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "willvincent/laravel-rateable",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willvincent/laravel-rateable.git",
+                "reference": "72e8ad2d7c565b3f226dac093f385ec3d3308df4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willvincent/laravel-rateable/zipball/72e8ad2d7c565b3f226dac093f385ec3d3308df4",
+                "reference": "72e8ad2d7c565b3f226dac093f385ec3d3308df4",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/commands"
+                ],
+                "psr-4": {
+                    "willvincent\\Rateable\\": "src/Rateable"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Will Vincent",
+                    "email": "tcindie@gmail.com"
+                }
+            ],
+            "description": "Allows multiple models to be rated with a fivestar like system.",
+            "keywords": [
+                "Rating",
+                "fivestar",
+                "laravel",
+                "laravel 5",
+                "rateable",
+                "vote"
+            ],
+            "time": "2016-10-27T15:28:22+00:00"
         }
     ],
     "packages-dev": [

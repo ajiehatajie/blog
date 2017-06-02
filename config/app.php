@@ -180,7 +180,8 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-
+        BrianFaust\Commentable\CommentableServiceProvider::class,
+        willvincent\Rateable\RateableServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -243,7 +244,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
-      
+
 
     ],
 

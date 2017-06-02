@@ -11,13 +11,15 @@
         "barryvdh/laravel-debugbar": "^2.3",
         "cviebrock/eloquent-sluggable": "^4.2",
         "cviebrock/eloquent-taggable": "^2.1",
+        "faustbrian/laravel-commentable": "^2.1",
         "guzzlehttp/guzzle": "^6.2",
         "laravel/framework": "5.4.*",
         "laravel/scout": "^3.0",
         "laravel/tinker": "~1.0",
         "mcamara/laravel-localization": "^1.2",
         "unisharp/laravel-ckeditor": "^4.6",
-        "unisharp/laravel-filemanager": "^1.7"
+        "unisharp/laravel-filemanager": "^1.7",
+        "willvincent/laravel-rateable": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

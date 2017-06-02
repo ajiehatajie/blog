@@ -11,12 +11,6 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
 
 
 Route::group(
@@ -38,8 +32,13 @@ function()
   Route::get('/home', 'HomeController@index')->name('home');
   Route::get('register/verify/{token}', 'Auth\RegisterController@verify');
 
-
   Auth::routes();
+  Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+
+});
+
 
 
   /*
@@ -54,9 +53,7 @@ function()
   Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
   Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
   Route::resource('admin/category', 'Admin\\CategoryController');
-
+	Route::resource('admin/posts', 'Admin\\PostsController');
   /*
     end admin route
   */
-
-});
